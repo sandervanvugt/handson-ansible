@@ -1,0 +1,7 @@
+---
+- name: mytest
+  hosts: all
+  tasks:
+  - name: task1
+    debug:
+      msg: this is the debug module

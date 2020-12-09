@@ -1,0 +1,17 @@
+---
+  - name: install and start the servers
+    yum:
+      name:
+        - "{{ ftp_package }}"
+        - httpd
+      state: latest
+  - name: start ftp server
+    service:
+      name: "{{ ftp_package }}"
+      state: started
+      enabled: true
+  - name: start the web service
+    service:
+      name: httpd
+      state: started
+      enabled: true
